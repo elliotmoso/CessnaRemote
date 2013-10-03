@@ -17,14 +17,14 @@ namespace Cessna_Panel
         MySQL Connection;
         Boolean[] State = new Boolean[6];
         Boolean restarting = false;
-        Boolean paused = false;
+        Boolean paused = true;
 
         public Cessna_Control()
         {
             InitializeComponent();
             try
             {
-                //Connection = new MySQL("elliotmoso.com", "3306", "elliot_concurso", "elliot_concurso", "cessnaupc");
+                Connection = new MySQL("elliotmoso.com", "3306", "elliot_concurso", "elliot_concurso", "cessnaupc");
             }
             catch { }
         }
@@ -188,7 +188,7 @@ namespace Cessna_Panel
                         vert_speed_aircheck.Enabled = true;
                         vert_speed_aircheck.Interval = 30000;
                         string con = "INSERT INTO concursantes (pilot,score) values ('" + pilot_name.Text + "','" + vert_speed.Text + "')";
-                        //Connection.MySQLQuery(con);
+                        Connection.MySQLQuery(con);
                         ranking_grid.DataSource = null;
                         ranking_grid.DataSource = Connection.MySQLQuery("SELECT pilot AS 'Piloto' ,score AS 'Puntuación' FROM concursantes ORDER BY score DESC");
                     }
@@ -267,10 +267,10 @@ namespace Cessna_Panel
         private void BDUpdate_Tick(object sender, EventArgs e)
         {
             BDUpdate.Interval = 60000;
-            //Connection.OpenConnection();
+            Connection.OpenConnection();
             ranking_grid.DataSource = null;
-            //ranking_grid.DataSource = Connection.MySQLQuery("SELECT pilot AS 'Piloto' ,score AS 'Puntuacion' FROM concursantes ORDER BY score DESC");
-            //Connection.Close();
+            ranking_grid.DataSource = Connection.MySQLQuery("SELECT pilot AS 'Piloto' ,score AS 'Puntuacion' FROM concursantes ORDER BY score DESC");
+            Connection.Close();
         }
 
         private void RestartServer_Tick(object sender, EventArgs e)
@@ -438,6 +438,11 @@ namespace Cessna_Panel
                 vert_speed_aircheck.Enabled = State[5];
                 paused = false;
             }
+        }
+
+        private void Cessna_Control_Load(object sender, EventArgs e)
+        {
+            toolStripip2.Focus();
         }
     }
 }

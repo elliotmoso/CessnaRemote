@@ -228,7 +228,7 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 416F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(743, 416);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
@@ -279,8 +279,8 @@
             // 
             // checkBox10
             // 
-            this.checkBox10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.checkBox10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)));
             this.checkBox10.AutoSize = true;
             this.checkBox10.Location = new System.Drawing.Point(3, 228);
             this.checkBox10.Name = "checkBox10";
@@ -293,8 +293,8 @@
             // 
             // checkBox3
             // 
-            this.checkBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.checkBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)));
             this.checkBox3.AutoSize = true;
             this.checkBox3.Location = new System.Drawing.Point(3, 203);
             this.checkBox3.Name = "checkBox3";
@@ -307,8 +307,8 @@
             // 
             // checkBox17
             // 
-            this.checkBox17.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.checkBox17.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)));
             this.checkBox17.AutoSize = true;
             this.checkBox17.Location = new System.Drawing.Point(3, 178);
             this.checkBox17.Name = "checkBox17";
@@ -321,8 +321,8 @@
             // 
             // checkBox14
             // 
-            this.checkBox14.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.checkBox14.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)));
             this.checkBox14.AutoSize = true;
             this.checkBox14.Location = new System.Drawing.Point(3, 153);
             this.checkBox14.Name = "checkBox14";
@@ -335,8 +335,8 @@
             // 
             // checkBox11
             // 
-            this.checkBox11.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.checkBox11.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)));
             this.checkBox11.AutoSize = true;
             this.checkBox11.Location = new System.Drawing.Point(3, 128);
             this.checkBox11.Name = "checkBox11";
@@ -349,8 +349,8 @@
             // 
             // checkBox5
             // 
-            this.checkBox5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.checkBox5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)));
             this.checkBox5.AutoSize = true;
             this.checkBox5.Location = new System.Drawing.Point(3, 103);
             this.checkBox5.Name = "checkBox5";
@@ -363,8 +363,8 @@
             // 
             // checkBox1
             // 
-            this.checkBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.checkBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)));
             this.checkBox1.AutoSize = true;
             this.checkBox1.Location = new System.Drawing.Point(3, 28);
             this.checkBox1.Name = "checkBox1";
@@ -377,8 +377,8 @@
             // 
             // enginebox
             // 
-            this.enginebox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.enginebox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)));
             this.enginebox.AutoSize = true;
             this.enginebox.Location = new System.Drawing.Point(3, 3);
             this.enginebox.Name = "enginebox";
@@ -391,8 +391,8 @@
             // 
             // checkBox6
             // 
-            this.checkBox6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.checkBox6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)));
             this.checkBox6.AutoSize = true;
             this.checkBox6.Location = new System.Drawing.Point(3, 53);
             this.checkBox6.Name = "checkBox6";
@@ -405,8 +405,8 @@
             // 
             // checkBox4
             // 
-            this.checkBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.checkBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)));
             this.checkBox4.AutoSize = true;
             this.checkBox4.Location = new System.Drawing.Point(3, 78);
             this.checkBox4.Name = "checkBox4";
@@ -460,8 +460,8 @@
             // 
             // checkBox7
             // 
-            this.checkBox7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.checkBox7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)));
             this.checkBox7.AutoSize = true;
             this.checkBox7.Location = new System.Drawing.Point(3, 53);
             this.checkBox7.Name = "checkBox7";
@@ -474,8 +474,8 @@
             // 
             // setcom_checkbox
             // 
-            this.setcom_checkbox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.setcom_checkbox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)));
             this.setcom_checkbox.AutoSize = true;
             this.setcom_checkbox.Location = new System.Drawing.Point(3, 28);
             this.setcom_checkbox.Name = "setcom_checkbox";
@@ -488,8 +488,8 @@
             // 
             // checkBox2
             // 
-            this.checkBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.checkBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)));
             this.checkBox2.AutoSize = true;
             this.checkBox2.Checked = true;
             this.checkBox2.CheckState = System.Windows.Forms.CheckState.Checked;
@@ -504,9 +504,9 @@
             // 
             // setcom_box
             // 
-            this.setcom_box.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.setcom_box.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.setcom_box.Location = new System.Drawing.Point(186, 28);
             this.setcom_box.Name = "setcom_box";
             this.setcom_box.Size = new System.Drawing.Size(171, 20);
@@ -526,8 +526,8 @@
             // 
             // leftleak_box
             // 
-            this.leftleak_box.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.leftleak_box.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)));
             this.leftleak_box.AutoSize = true;
             this.leftleak_box.Location = new System.Drawing.Point(3, 78);
             this.leftleak_box.Name = "leftleak_box";
@@ -562,8 +562,8 @@
             // 
             // checkBox8
             // 
-            this.checkBox8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.checkBox8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)));
             this.checkBox8.AutoSize = true;
             this.checkBox8.Location = new System.Drawing.Point(3, 103);
             this.checkBox8.Name = "checkBox8";
@@ -576,8 +576,8 @@
             // 
             // oiltempincrease_box
             // 
-            this.oiltempincrease_box.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.oiltempincrease_box.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)));
             this.oiltempincrease_box.AutoSize = true;
             this.oiltempincrease_box.Location = new System.Drawing.Point(3, 128);
             this.oiltempincrease_box.Name = "oiltempincrease_box";
@@ -616,7 +616,7 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(743, 419);
+            this.groupBox1.Size = new System.Drawing.Size(743, 416);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Events";
@@ -633,7 +633,7 @@
             this.fail_grid.GridColor = System.Drawing.SystemColors.ControlLight;
             this.fail_grid.Location = new System.Drawing.Point(3, 16);
             this.fail_grid.Name = "fail_grid";
-            this.fail_grid.Size = new System.Drawing.Size(737, 400);
+            this.fail_grid.Size = new System.Drawing.Size(737, 397);
             this.fail_grid.TabIndex = 0;
             // 
             // Code
@@ -758,7 +758,6 @@
             // 
             // vert_speed_timer
             // 
-            this.vert_speed_timer.Enabled = true;
             this.vert_speed_timer.Interval = 500;
             this.vert_speed_timer.Tick += new System.EventHandler(this.vert_speed_timer_Tick);
             // 
@@ -786,6 +785,7 @@
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
+            this.Load += new System.EventHandler(this.Cessna_Control_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.tabControl1.ResumeLayout(false);

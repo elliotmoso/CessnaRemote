@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApplication1", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cessna_Panel", "..\Cessna_Panel\Cessna_Panel\Cessna_Panel.csproj", "{79AC9265-98BE-4475-B99E-32BCAE326475}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Server", "Server\Server.csproj", "{775B120A-EB1D-45C9-968A-C36F2933DE05}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug x64|x64 = Debug x64|x64
@@ -96,6 +98,21 @@ Global
 		{79AC9265-98BE-4475-B99E-32BCAE326475}.Release|x64.Build.0 = Release|x64
 		{79AC9265-98BE-4475-B99E-32BCAE326475}.Release|x86.ActiveCfg = Release|x86
 		{79AC9265-98BE-4475-B99E-32BCAE326475}.Release|x86.Build.0 = Release|x86
+		{775B120A-EB1D-45C9-968A-C36F2933DE05}.Debug x64|x64.ActiveCfg = Debug|x86
+		{775B120A-EB1D-45C9-968A-C36F2933DE05}.Debug x64|x86.ActiveCfg = Debug|x86
+		{775B120A-EB1D-45C9-968A-C36F2933DE05}.Debug x64|x86.Build.0 = Debug|x86
+		{775B120A-EB1D-45C9-968A-C36F2933DE05}.Debug|x64.ActiveCfg = Debug|x86
+		{775B120A-EB1D-45C9-968A-C36F2933DE05}.Debug|x86.ActiveCfg = Debug|x86
+		{775B120A-EB1D-45C9-968A-C36F2933DE05}.Debug|x86.Build.0 = Debug|x86
+		{775B120A-EB1D-45C9-968A-C36F2933DE05}.Panel|x64.ActiveCfg = Release|x86
+		{775B120A-EB1D-45C9-968A-C36F2933DE05}.Panel|x86.ActiveCfg = Release|x86
+		{775B120A-EB1D-45C9-968A-C36F2933DE05}.Panel|x86.Build.0 = Release|x86
+		{775B120A-EB1D-45C9-968A-C36F2933DE05}.Release x64|x64.ActiveCfg = Release|x86
+		{775B120A-EB1D-45C9-968A-C36F2933DE05}.Release x64|x86.ActiveCfg = Release|x86
+		{775B120A-EB1D-45C9-968A-C36F2933DE05}.Release x64|x86.Build.0 = Release|x86
+		{775B120A-EB1D-45C9-968A-C36F2933DE05}.Release|x64.ActiveCfg = Release|x86
+		{775B120A-EB1D-45C9-968A-C36F2933DE05}.Release|x86.ActiveCfg = Release|x86
+		{775B120A-EB1D-45C9-968A-C36F2933DE05}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
