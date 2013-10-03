@@ -35,7 +35,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="FSUIPCClient">
-      <HintPath>..\ControlFSX\bin\Release\FSUIPCClient.dll</HintPath>
+      <HintPath>..\..\FSUIPCClient.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
