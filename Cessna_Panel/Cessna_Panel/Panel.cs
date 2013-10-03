@@ -14,7 +14,7 @@ namespace Cessna_Panel
 {
     public partial class Cessna_Control : Form
     {
-        MySQL Connection;
+        public MySQL Connection;
         Boolean[] State = new Boolean[6];
         Boolean restarting = false;
         Boolean paused = true;
@@ -180,19 +180,19 @@ namespace Cessna_Panel
                 }
                 else if(onground ==1)
                 {
-                    Connection.OpenConnection();
-                    if (pilot_name.Text != "Pilot in Command" && vert_speed.Text !="0")
+                    if (Flying.Checked && vert_speed.Text !="0")
                     {
                         vert_speed.ForeColor = Color.Red;
                         vert_speed_timer.Enabled = false;
                         vert_speed_aircheck.Enabled = true;
                         vert_speed_aircheck.Interval = 30000;
-                        string con = "INSERT INTO concursantes (pilot,score) values ('" + pilot_name.Text + "','" + vert_speed.Text + "')";
-                        Connection.MySQLQuery(con);
+                        new Touchdown(this).ShowDialog();
                         ranking_grid.DataSource = null;
                         ranking_grid.DataSource = Connection.MySQLQuery("SELECT pilot AS 'Piloto' ,score AS 'Puntuación' FROM concursantes ORDER BY score DESC");
+                        Flying.Checked = false;
+                        button1.Enabled = true;
                     }
-                    Connection.Close();
+                   
                 }
             }
             catch
@@ -269,8 +269,15 @@ namespace Cessna_Panel
             BDUpdate.Interval = 60000;
             Connection.OpenConnection();
             ranking_grid.DataSource = null;
-            ranking_grid.DataSource = Connection.MySQLQuery("SELECT pilot AS 'Piloto' ,score AS 'Puntuacion' FROM concursantes ORDER BY score DESC");
-            Connection.Close();
+            if (adminToolStripMenuItem.Checked)
+            {
+                Connection.MySQLQuery("SELECT pilot AS 'Piloto' ,score AS 'Puntuacion' ,email as 'Email' , tel as 'Tel'FROM concursantes ORDER BY score DESC");
+            }
+            else
+            {
+                ranking_grid.DataSource = Connection.MySQLQuery("SELECT pilot AS 'Piloto' ,score AS 'Puntuacion' FROM concursantes ORDER BY score DESC");
+            }
+                Connection.Close();
         }
 
         private void RestartServer_Tick(object sender, EventArgs e)
@@ -444,5 +451,57 @@ namespace Cessna_Panel
         {
             toolStripip2.Focus();
         }
+
+        private void startRecivingToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (vert_speed_timer.Enabled)
+            {
+                Flying.Checked = false;
+                button1.Enabled = true;
+                startRecivingToolStripMenuItem.Text = "Start Recieving";
+            }
+            else
+            {
+                Flying.Checked = true;
+                button1.Enabled = false;
+                startRecivingToolStripMenuItem.Text = "Stop Recieving";
+            }
+            vert_speed_timer.Enabled = !vert_speed_timer.Enabled;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Flying.Checked = true;
+            button1.Enabled = false;
+            startRecivingToolStripMenuItem.Text = "Stop Recieving";
+            vert_speed_timer.Enabled = true;
+        }
+
+        private void loadUserToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            vert_speed.Text = "-99999";
+            new Touchdown(this).ShowDialog();
+        }
+
+        private void debugModeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!debugToolStripMenuItem.Enabled)
+            {
+                debugModeToolStripMenuItem.Checked = true;
+                debugToolStripMenuItem.Enabled = true;
+            }
+            else
+            {
+                debugModeToolStripMenuItem.Checked = false;
+                debugToolStripMenuItem.Enabled = false;
+            }
+        }
+
+        private void adminToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            adminToolStripMenuItem.Checked = !adminToolStripMenuItem.Checked;
+        }
+
+
     }
 }

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cessna_Control));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.loadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loadFailureListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -37,7 +38,13 @@
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
             this.restartServerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.debugModeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripip2 = new System.Windows.Forms.ToolStripTextBox();
+            this.startRecivingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.debugToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.loadUserToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.logToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SaveTxt = new System.Windows.Forms.SaveFileDialog();
             this.OpenTxt = new System.Windows.Forms.OpenFileDialog();
             this.tabControl1 = new System.Windows.Forms.TabControl();
@@ -72,14 +79,15 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.fail_grid = new System.Windows.Forms.DataGridView();
             this.Code = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Value = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.ranking_grid = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.vert_speed = new System.Windows.Forms.Label();
-            this.pilot_name = new System.Windows.Forms.TextBox();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.Flying = new System.Windows.Forms.CheckBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.freq_timer = new System.Windows.Forms.Timer(this.components);
             this.flaps_timer = new System.Windows.Forms.Timer(this.components);
             this.leftleak_timer = new System.Windows.Forms.Timer(this.components);
@@ -88,6 +96,7 @@
             this.vert_speed_aircheck = new System.Windows.Forms.Timer(this.components);
             this.BDUpdate = new System.Windows.Forms.Timer(this.components);
             this.RestartServer = new System.Windows.Forms.Timer(this.components);
+            this.adminToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.control.SuspendLayout();
@@ -107,6 +116,9 @@
             this.tableLayoutPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ranking_grid)).BeginInit();
             this.tableLayoutPanel5.SuspendLayout();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -115,7 +127,9 @@
             this.loadToolStripMenuItem,
             this.saveToolStripMenuItem,
             this.settingsToolStripMenuItem,
-            this.toolStripip2});
+            this.toolStripip2,
+            this.startRecivingToolStripMenuItem,
+            this.debugToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(757, 27);
@@ -156,7 +170,10 @@
             // 
             this.settingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripTextBox1,
-            this.restartServerToolStripMenuItem});
+            this.restartServerToolStripMenuItem,
+            this.toolStripSeparator1,
+            this.debugModeToolStripMenuItem,
+            this.adminToolStripMenuItem});
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
             this.settingsToolStripMenuItem.Size = new System.Drawing.Size(61, 23);
             this.settingsToolStripMenuItem.Text = "Settings";
@@ -174,15 +191,58 @@
             this.restartServerToolStripMenuItem.Text = "Restart Server";
             this.restartServerToolStripMenuItem.Click += new System.EventHandler(this.RestartServer_Tick);
             // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(157, 6);
+            // 
+            // debugModeToolStripMenuItem
+            // 
+            this.debugModeToolStripMenuItem.Name = "debugModeToolStripMenuItem";
+            this.debugModeToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.debugModeToolStripMenuItem.Text = "Debug Mode";
+            this.debugModeToolStripMenuItem.Click += new System.EventHandler(this.debugModeToolStripMenuItem_Click);
+            // 
             // toolStripip2
             // 
             this.toolStripip2.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.toolStripip2.Name = "toolStripip2";
             this.toolStripip2.Size = new System.Drawing.Size(100, 23);
-            this.toolStripip2.Text = "192.168.0.2";
+            this.toolStripip2.Text = "192.168.1.2";
             this.toolStripip2.TextBoxTextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.toolStripip2.Enter += new System.EventHandler(this.toolStripip2_Leave);
             this.toolStripip2.Leave += new System.EventHandler(this.toolStripip2_Leave);
+            // 
+            // startRecivingToolStripMenuItem
+            // 
+            this.startRecivingToolStripMenuItem.Name = "startRecivingToolStripMenuItem";
+            this.startRecivingToolStripMenuItem.Size = new System.Drawing.Size(97, 23);
+            this.startRecivingToolStripMenuItem.Text = "Start Recieving";
+            this.startRecivingToolStripMenuItem.Click += new System.EventHandler(this.startRecivingToolStripMenuItem_Click);
+            // 
+            // debugToolStripMenuItem
+            // 
+            this.debugToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.loadUserToolStripMenuItem1,
+            this.logToolStripMenuItem});
+            this.debugToolStripMenuItem.Enabled = false;
+            this.debugToolStripMenuItem.Name = "debugToolStripMenuItem";
+            this.debugToolStripMenuItem.Size = new System.Drawing.Size(54, 23);
+            this.debugToolStripMenuItem.Text = "Debug";
+            // 
+            // loadUserToolStripMenuItem1
+            // 
+            this.loadUserToolStripMenuItem1.Name = "loadUserToolStripMenuItem1";
+            this.loadUserToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.loadUserToolStripMenuItem1.Text = "Load User";
+            this.loadUserToolStripMenuItem1.Click += new System.EventHandler(this.loadUserToolStripMenuItem_Click);
+            // 
+            // logToolStripMenuItem
+            // 
+            this.logToolStripMenuItem.Enabled = false;
+            this.logToolStripMenuItem.Name = "logToolStripMenuItem";
+            this.logToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.logToolStripMenuItem.Text = "Log";
             // 
             // SaveTxt
             // 
@@ -627,7 +687,6 @@
             this.fail_grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.fail_grid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Code,
-            this.Name,
             this.Value});
             this.fail_grid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.fail_grid.GridColor = System.Drawing.SystemColors.ControlLight;
@@ -640,12 +699,6 @@
             // 
             this.Code.HeaderText = "Code";
             this.Code.Name = "Code";
-            // 
-            // Name
-            // 
-            this.Name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Name.HeaderText = "Name";
-            this.Name.Name = "Name";
             // 
             // Value
             // 
@@ -699,13 +752,13 @@
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel5.Controls.Add(this.vert_speed, 0, 0);
-            this.tableLayoutPanel5.Controls.Add(this.pilot_name, 0, 1);
+            this.tableLayoutPanel5.Controls.Add(this.splitContainer1, 0, 1);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 2;
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 88.78281F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.21718F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 93.02885F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.971154F));
             this.tableLayoutPanel5.Size = new System.Drawing.Size(368, 416);
             this.tableLayoutPanel5.TabIndex = 3;
             // 
@@ -719,22 +772,48 @@
             this.vert_speed.Location = new System.Drawing.Point(25, 25);
             this.vert_speed.Margin = new System.Windows.Forms.Padding(25);
             this.vert_speed.Name = "vert_speed";
-            this.vert_speed.Size = new System.Drawing.Size(318, 319);
+            this.vert_speed.Size = new System.Drawing.Size(318, 337);
             this.vert_speed.TabIndex = 2;
             this.vert_speed.Text = "0";
             this.vert_speed.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // pilot_name
+            // splitContainer1
             // 
-            this.pilot_name.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.pilot_name.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pilot_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pilot_name.Location = new System.Drawing.Point(3, 372);
-            this.pilot_name.Name = "pilot_name";
-            this.pilot_name.Size = new System.Drawing.Size(362, 40);
-            this.pilot_name.TabIndex = 3;
-            this.pilot_name.Text = "Pilot in Command";
-            this.pilot_name.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.Location = new System.Drawing.Point(3, 390);
+            this.splitContainer1.Name = "splitContainer1";
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.Flying);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.button1);
+            this.splitContainer1.Size = new System.Drawing.Size(362, 23);
+            this.splitContainer1.SplitterDistance = 230;
+            this.splitContainer1.TabIndex = 3;
+            // 
+            // Flying
+            // 
+            this.Flying.AutoSize = true;
+            this.Flying.Location = new System.Drawing.Point(3, 3);
+            this.Flying.Name = "Flying";
+            this.Flying.Size = new System.Drawing.Size(53, 17);
+            this.Flying.TabIndex = 0;
+            this.Flying.Text = "Flying";
+            this.Flying.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button1.Location = new System.Drawing.Point(0, 0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(128, 23);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Start";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // freq_timer
             // 
@@ -777,6 +856,13 @@
             this.RestartServer.Interval = 60000;
             this.RestartServer.Tick += new System.EventHandler(this.RestartServer_Tick);
             // 
+            // adminToolStripMenuItem
+            // 
+            this.adminToolStripMenuItem.Name = "adminToolStripMenuItem";
+            this.adminToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.adminToolStripMenuItem.Text = "Admin";
+            this.adminToolStripMenuItem.Click += new System.EventHandler(this.adminToolStripMenuItem_Click);
+            // 
             // Cessna_Control
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -784,7 +870,10 @@
             this.ClientSize = new System.Drawing.Size(757, 475);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
+            this.Name = "Cessna_Control";
+            this.Text = "Cessna Panel";
             this.Load += new System.EventHandler(this.Cessna_Control_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -809,6 +898,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.ranking_grid)).EndInit();
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel5.PerformLayout();
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel1.PerformLayout();
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            this.splitContainer1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -833,7 +926,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView fail_grid;
         private System.Windows.Forms.DataGridViewTextBoxColumn Code;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Name;
         private System.Windows.Forms.DataGridViewTextBoxColumn Value;
         private System.Windows.Forms.CheckBox checkBox17;
         private System.Windows.Forms.CheckBox checkBox14;
@@ -864,10 +956,9 @@
         private System.Windows.Forms.TrackBar oiltempincrease_bar;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
-        private System.Windows.Forms.DataGridView ranking_grid;
+        public System.Windows.Forms.DataGridView ranking_grid;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
-        private System.Windows.Forms.Label vert_speed;
-        private System.Windows.Forms.TextBox pilot_name;
+        public System.Windows.Forms.Label vert_speed;
         private System.Windows.Forms.Timer vert_speed_timer;
         private System.Windows.Forms.Timer vert_speed_aircheck;
         private System.Windows.Forms.ToolStripTextBox toolStripTextBox1;
@@ -875,6 +966,16 @@
         private System.Windows.Forms.Timer RestartServer;
         private System.Windows.Forms.ToolStripMenuItem restartServerToolStripMenuItem;
         private System.Windows.Forms.ToolStripTextBox toolStripip2;
+        private System.Windows.Forms.ToolStripMenuItem startRecivingToolStripMenuItem;
+        private System.Windows.Forms.SplitContainer splitContainer1;
+        private System.Windows.Forms.CheckBox Flying;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem debugModeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem debugToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem loadUserToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem logToolStripMenuItem;
+        internal System.Windows.Forms.ToolStripMenuItem adminToolStripMenuItem;
     }
 }
 
