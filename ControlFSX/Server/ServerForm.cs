@@ -34,23 +34,14 @@ namespace Server
 
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
-            server = new CessnaServer(this);
-            server.ServerEvent += new CessnaServerEventHandler(server_ServerEvent);
-        }
-
-        public void server_ServerEvent(object sender, CessnaServerEventArgs e)
-        {
-            //throw new NotImplementedException();
-            Log.Text += "RESTARTING SERVER\r\n";
-            backgroundWorker1.CancelAsync();
-            backgroundWorker1.Dispose();
-            backgroundWorker1.RunWorkerAsync();
+            Log.Text += "New Instance [DONE]\r\n";
             server = new CessnaServer(this);
         }
 
         private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             Log.Text += "SERVER STOPPED\r\n";
+            backgroundWorker1.RunWorkerAsync();
         }
 
         private void Log_TextChanged(object sender, EventArgs e)

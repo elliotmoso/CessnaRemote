@@ -8,13 +8,11 @@ using FSUIPC;
 
 namespace Server
 {
-    public delegate void CessnaServerEventHandler(object sender, CessnaServerEventArgs e);
     public class CessnaServer
     {
         TcpListener tcpListener;
         NetworkStream networkStream;
         ServerForm form;
-        public event CessnaServerEventHandler ServerEvent;
         public CessnaServer(ServerForm form_)
         {
             form = form_;
@@ -67,10 +65,11 @@ namespace Server
                         {
                             //// Starts a new instance of the program itself
                             //System.Diagnostics.Process.Start(Assembly.GetExecutingAssembly().Location);
-                            form.Log.Text += "RESTART\r\n";
+                            //form.Log.Text += "RESTART\r\n";
+                            tcpListener.Stop();
                             //// Closes the current process
                             //Environment.Exit(0);
-                            form.server_ServerEvent(this, new CessnaServerEventArgs("restart!!!"));
+                            break;
                         }
                         else
                         {
@@ -142,12 +141,13 @@ namespace Server
                 }
             }
         }
+
         private Boolean openFSUIPC()
         {
             try
             {
                 // Attempt to open a connection to FSUIPC (running on any version of Flight Sim)
-                FSUIPCConnection.Open();
+                //FSUIPCConnection.Open();
                 return false;
             }
             catch (Exception)
@@ -166,22 +166,5 @@ namespace Server
     };
             return bcd;
         }
-        public virtual void OnServerEvent(CessnaServerEventArgs e)
-        {
-            form.server_ServerEvent(this, e);
-            //form.Log.Text += "OnServerEvent";
-            ServerEvent(this, e);
-        }  
-    }
-
-    public class CessnaServerEventArgs : EventArgs
-    {
-        public string message;
-
-        public CessnaServerEventArgs(string _Event){
-            message=_Event;
-
-        }
-
     }
 }

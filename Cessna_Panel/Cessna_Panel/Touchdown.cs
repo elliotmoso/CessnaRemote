@@ -32,11 +32,11 @@ namespace Cessna_Panel
             main.ranking_grid.DataSource = null;
             if (main.adminToolStripMenuItem.Checked)
             {
-                main.ranking_grid.DataSource = main.Connection.MySQLQuery("SELECT pilot AS 'Piloto' ,score AS 'Puntuacion' ,email as 'Email' , tel as 'Tel'FROM concursantes ORDER BY score DESC");
+                main.ranking_grid.DataSource = main.Connection.MySQLQuery("SELECT pilot AS 'Piloto' ,score AS 'Puntuacion' ,email as 'Email' , tel as 'Tel' FROM concursantes ORDER BY score DESC");
             }
             else
             {
-                main.ranking_grid.DataSource = main.Connection.MySQLQuery("SELECT pilot AS 'Piloto' ,score AS 'Puntuación' FROM concursantes ORDER BY score DESC");
+                main.ranking_grid.DataSource = main.Connection.MySQLQuery("SELECT pilot AS 'Piloto' ,score AS 'Puntuacion' FROM concursantes ORDER BY score DESC");
             }
             main.Connection.Close();
             this.Close();

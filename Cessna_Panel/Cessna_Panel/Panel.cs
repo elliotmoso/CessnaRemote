@@ -271,7 +271,7 @@ namespace Cessna_Panel
             ranking_grid.DataSource = null;
             if (adminToolStripMenuItem.Checked)
             {
-                Connection.MySQLQuery("SELECT pilot AS 'Piloto' ,score AS 'Puntuacion' ,email as 'Email' , tel as 'Tel'FROM concursantes ORDER BY score DESC");
+                ranking_grid.DataSource = Connection.MySQLQuery("SELECT pilot AS 'Piloto' ,score AS 'Puntuacion' ,email as 'Email' , tel as 'Tel' FROM concursantes ORDER BY score DESC");
             }
             else
             {
@@ -343,14 +343,13 @@ namespace Cessna_Panel
                     new Connection(get_ip(), "RESTART", "request", "HEX");
                 }
                 catch { }
-                RestartServer.Interval = 1000;
                 RestartServer.Stop();
                 RestartServer.Start();
                 restarting = true;
             }
             else
             {
-                RestartServer.Interval = 60000;
+                RestartServer.Interval = Convert.ToInt32(toolStripTextBox2.Text) * 1000;
                 RestartServer.Stop();
                 RestartServer.Start();
                 freq_timer.Enabled = State[0];
@@ -450,6 +449,7 @@ namespace Cessna_Panel
         private void Cessna_Control_Load(object sender, EventArgs e)
         {
             toolStripip2.Focus();
+            toolStripTextBox2.Text = (RestartServer.Interval / 1000).ToString();
         }
 
         private void startRecivingToolStripMenuItem_Click(object sender, EventArgs e)
@@ -500,7 +500,27 @@ namespace Cessna_Panel
         private void adminToolStripMenuItem_Click(object sender, EventArgs e)
         {
             adminToolStripMenuItem.Checked = !adminToolStripMenuItem.Checked;
+            BDUpdate_Tick(sender, e);
         }
+
+        private void toolStripTextBox2_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                RestartServer.Interval = Convert.ToInt32(toolStripTextBox2.Text) * 1000;
+            }
+            catch {
+                toolStripTextBox2.Text = (RestartServer.Interval / 1000).ToString();
+            }
+        }
+
+        private void autoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RestartServer.Enabled = !RestartServer.Enabled;
+            autoToolStripMenuItem.Checked = !RestartServer.Enabled;
+
+        }
+
 
 
     }

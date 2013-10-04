@@ -20,7 +20,8 @@ namespace Cessna_Panel
             {
                 socketForServer = new TcpClient(server, port);
                 networkStream = socketForServer.GetStream();
-
+                // Set a 10 millisecond timeout for reading.
+                networkStream.ReadTimeout = 1000;
                 StreamReader streamReader = new System.IO.StreamReader(networkStream);
 
                 StreamWriter streamWriter = new System.IO.StreamWriter(networkStream);

@@ -40,11 +40,16 @@
             this.restartServerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.debugModeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.adminToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripip2 = new System.Windows.Forms.ToolStripTextBox();
             this.startRecivingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.debugToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loadUserToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.logToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.updateBDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.restartServerToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.autoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripTextBox2 = new System.Windows.Forms.ToolStripTextBox();
             this.SaveTxt = new System.Windows.Forms.SaveFileDialog();
             this.OpenTxt = new System.Windows.Forms.OpenFileDialog();
             this.tabControl1 = new System.Windows.Forms.TabControl();
@@ -96,7 +101,6 @@
             this.vert_speed_aircheck = new System.Windows.Forms.Timer(this.components);
             this.BDUpdate = new System.Windows.Forms.Timer(this.components);
             this.RestartServer = new System.Windows.Forms.Timer(this.components);
-            this.adminToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.control.SuspendLayout();
@@ -129,7 +133,8 @@
             this.settingsToolStripMenuItem,
             this.toolStripip2,
             this.startRecivingToolStripMenuItem,
-            this.debugToolStripMenuItem});
+            this.debugToolStripMenuItem,
+            this.restartServerToolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(757, 27);
@@ -203,6 +208,13 @@
             this.debugModeToolStripMenuItem.Text = "Debug Mode";
             this.debugModeToolStripMenuItem.Click += new System.EventHandler(this.debugModeToolStripMenuItem_Click);
             // 
+            // adminToolStripMenuItem
+            // 
+            this.adminToolStripMenuItem.Name = "adminToolStripMenuItem";
+            this.adminToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.adminToolStripMenuItem.Text = "Admin";
+            this.adminToolStripMenuItem.Click += new System.EventHandler(this.adminToolStripMenuItem_Click);
+            // 
             // toolStripip2
             // 
             this.toolStripip2.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
@@ -224,7 +236,8 @@
             // 
             this.debugToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.loadUserToolStripMenuItem1,
-            this.logToolStripMenuItem});
+            this.logToolStripMenuItem,
+            this.updateBDToolStripMenuItem});
             this.debugToolStripMenuItem.Enabled = false;
             this.debugToolStripMenuItem.Name = "debugToolStripMenuItem";
             this.debugToolStripMenuItem.Size = new System.Drawing.Size(54, 23);
@@ -243,6 +256,38 @@
             this.logToolStripMenuItem.Name = "logToolStripMenuItem";
             this.logToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.logToolStripMenuItem.Text = "Log";
+            // 
+            // updateBDToolStripMenuItem
+            // 
+            this.updateBDToolStripMenuItem.Name = "updateBDToolStripMenuItem";
+            this.updateBDToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.updateBDToolStripMenuItem.Text = "Update BD";
+            this.updateBDToolStripMenuItem.Click += new System.EventHandler(this.BDUpdate_Tick);
+            // 
+            // restartServerToolStripMenuItem1
+            // 
+            this.restartServerToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.autoToolStripMenuItem,
+            this.toolStripTextBox2});
+            this.restartServerToolStripMenuItem1.Name = "restartServerToolStripMenuItem1";
+            this.restartServerToolStripMenuItem1.Size = new System.Drawing.Size(90, 23);
+            this.restartServerToolStripMenuItem1.Text = "Restart Server";
+            // 
+            // autoToolStripMenuItem
+            // 
+            this.autoToolStripMenuItem.Checked = true;
+            this.autoToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.autoToolStripMenuItem.Name = "autoToolStripMenuItem";
+            this.autoToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.autoToolStripMenuItem.Text = "Auto";
+            this.autoToolStripMenuItem.Click += new System.EventHandler(this.autoToolStripMenuItem_Click);
+            // 
+            // toolStripTextBox2
+            // 
+            this.toolStripTextBox2.Name = "toolStripTextBox2";
+            this.toolStripTextBox2.Size = new System.Drawing.Size(100, 23);
+            this.toolStripTextBox2.Text = "60";
+            this.toolStripTextBox2.TextChanged += new System.EventHandler(this.toolStripTextBox2_TextChanged);
             // 
             // SaveTxt
             // 
@@ -856,13 +901,6 @@
             this.RestartServer.Interval = 60000;
             this.RestartServer.Tick += new System.EventHandler(this.RestartServer_Tick);
             // 
-            // adminToolStripMenuItem
-            // 
-            this.adminToolStripMenuItem.Name = "adminToolStripMenuItem";
-            this.adminToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
-            this.adminToolStripMenuItem.Text = "Admin";
-            this.adminToolStripMenuItem.Click += new System.EventHandler(this.adminToolStripMenuItem_Click);
-            // 
             // Cessna_Control
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -976,6 +1014,10 @@
         private System.Windows.Forms.ToolStripMenuItem loadUserToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem logToolStripMenuItem;
         internal System.Windows.Forms.ToolStripMenuItem adminToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem restartServerToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripTextBox toolStripTextBox2;
+        private System.Windows.Forms.ToolStripMenuItem autoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem updateBDToolStripMenuItem;
     }
 }
 
